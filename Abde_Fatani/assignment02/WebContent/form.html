@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>McGill Book Store Inventory System</title>
+</head>
+<body>
+	<h1>McGill Book Store Inventory System</h1>
+	<form method="post" action="updateInventory.do">
+		<div id="form" style="width:500px;">
+			<fieldset>
+				<legend>Add Book</legend>
+				UID: <input type="text" name="bookId"><br> 
+				QTY: <input type="text" name="bookQty"><br> 
+				Price: <input type="text" name="bookPrice"><br>
+				Author: <input type="text" name="bookAuthor">
+			</fieldset><br/>
+			<fieldset>
+				<legend>Add Compact Disc</legend>
+				UID: <input type="text" name="discId"><br> 
+				QTY: <input type="text" name="discQty"><br> 
+				Price: <input type="text" name="discPrice"><br>
+				Artist: <input type="text" name="discArtist">
+			</fieldset><br/>
+			<input type="submit" value="Submit" />
+		</div>
+	</form>
+</body>
+</html>
