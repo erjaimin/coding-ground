@@ -1,0 +1,126 @@
+---Displaying only item from OneItem---
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+---End of item---
+..........PRESS ENTER TO CONTINUE..........
+
+---Displaying First Item from MiniItems---
+First line of first item
+Second line of first item
+---End of item---
+..........PRESS ENTER TO CONTINUE..........
+
+---Displaying Second Item from MiniItems---
+First line of second item
+
+Third line of second item
+---End of item---
+..........PRESS ENTER TO CONTINUE..........
+
+---Displaying many items from ManyItems---
+Line #1 of item #1
+Line #1 of item #101
+Line #2 of item #101
+Line #3 of item #101
+Line #1 of item #201
+Line #2 of item #201
+Line #3 of item #201
+Line #4 of item #201
+Line #5 of item #201
+Line #1 of item #401
+Line #2 of item #401
+Line #1 of item #501
+Line #2 of item #501
+Line #3 of item #501
+Line #4 of item #501
+Line #1 of item #601
+Line #2 of item #601
+Line #3 of item #601
+Line #4 of item #601
+Line #5 of item #601
+Line #6 of item #601
+Line #1 of item #701
+Line #1 of item #801
+Line #2 of item #801
+Line #3 of item #801
+Line #1 of item #901
+Line #2 of item #901
+Line #3 of item #901
+Line #4 of item #901
+Line #5 of item #901
+---End of items from ManyItems---
+..........PRESS ENTER TO CONTINUE..........
+
+---Displaying No Such Item from ManyItems---
+---End of non-existent item---
+..........PRESS ENTER TO CONTINUE..........
+
+---Displaying First Item With Pauses---
+1   First of 13 lines in this item
+2
+3
+4
+5   (The next line is NOT a pause!)
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+7
+8
+9
+10
+11
+12
+13  Last of 13 lines -- pause follows
+
+...press enter...
+
+---End of item---
+..........PRESS ENTER TO CONTINUE..........
+
+---Displaying Second Item from WithPauses---
+1   First of four lines before the pause
+2
+3
+4
+
+...press enter...
+
+1   First of five lines after the first pause
+2   (next line is NOT the end of the item!)
+----------------------------------------------------------------------
+4   (Still in the second item)
+5
+
+...press enter...
+
+1   First and only line after the second pause
+---End of item---
+---Displaying null from WithPauses---
+---End of item---
+..........PRESS ENTER TO CONTINUE..........
+
+---Creation Fail #1---
+---Displaying No Such from NoSuchFile---
+---End of item---
+..........PRESS ENTER TO CONTINUE..........Could not open file 'NoSuchFile.txt' for input
+
+
+---Creation Fail #2---
+File 'Truncated.txt' is improperly formatted
+---Displaying First Item from Truncated---
+---End of item---
+---Displaying Second Item from Truncated---
+---End of item---
+---Displaying Third Item from Truncated---
+---End of item---
+..........PRESS ENTER TO CONTINUE..........
+
+
+This is the end of the program
+

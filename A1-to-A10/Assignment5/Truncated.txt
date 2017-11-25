@@ -1,0 +1,10 @@
+First Item
+It's fine
+--------------------------------------------------------------------------------
+Second Item
+Is also fine.
+No problem yet
+--------------------------------------------------------------------------------
+Third Item
+Here's the problem
+This one doesn't have the ----- line at the end.
