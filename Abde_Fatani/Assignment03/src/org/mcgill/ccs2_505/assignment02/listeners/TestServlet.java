@@ -1,7 +1,6 @@
 package org.mcgill.ccs2_505.assignment02.listeners;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,14 +23,12 @@ public class TestServlet extends HttpServlet implements ServletRequestAttributeL
      */
     public TestServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		req.setAttribute("area" , "438" ) ;
 		req.setAttribute( "major" , "990" ) ;
 		req.setAttribute( "minor", "5712" ) ;
@@ -43,7 +40,6 @@ public class TestServlet extends HttpServlet implements ServletRequestAttributeL
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
