@@ -1,20 +1,17 @@
 package org.mcgill.ccs2_505.assignment02.servlets;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.mcgill.ccs2_505.assignment02.inventory.Book;
 import org.mcgill.ccs2_505.assignment02.inventory.CompactDisc;
 import org.mcgill.ccs2_505.assignment02.inventory.Inventory;
 import org.mcgill.ccs2_505.assignment02.inventory.InventoryEntry;
-
-import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
 
 /**
  * Servlet implementation class InventoryController
@@ -39,22 +36,32 @@ public class UpdateInventory extends HttpServlet {
 		String cdPriceP = request.getParameter("CD_PRICE");
 		String cdArtistP = request.getParameter("CD_ARTIST");
 		
+		HttpSession session = request.getSession();
+		String user = request.getUserPrincipal() != null ? request.getUserPrincipal().getName() : "";
+		
 		/* Create the InventoryEntries. Will be null if there is an issue */
 		InventoryEntry bookIE = createBookIE(bookUIDP, bookQtyP, bookPriceP, bookAuthorP);
 		InventoryEntry cdIE = createCDIE(cdUIDP, cdQtyP, cdPriceP, cdArtistP);
+		
+		String bookTransaction = user+","+bookUIDP+","+bookPriceP+","+bookQtyP;
+		String cdTransaction = user+","+cdUIDP+","+cdPriceP+","+cdQtyP;
 		
 		/* Build the error message if need be */
 		String message = "";
 		if(bookIE != null && cdIE != null) {
 			inventory.add(bookIE);
 			inventory.add(cdIE);
+			session.setAttribute("bookTransaction", bookTransaction);
+			session.setAttribute("cdTransaction", cdTransaction);
 		}
 		else if(bookIE != null) {
 			inventory.add(bookIE);
+			session.setAttribute("bookTransaction", bookTransaction);
 			message = "CD entry is invalid. Ignored.";
 		}
 		else if(cdIE != null) {
 			inventory.add(cdIE);
+			session.setAttribute("cdTransaction", cdTransaction);
 			message = "Book entry is invalid. Ignored.";
 		}
 		else {
@@ -63,7 +70,7 @@ public class UpdateInventory extends HttpServlet {
 		
 		request.setAttribute("errorMsg", message);
 		
-		RequestDispatcher dispatch = request.getRequestDispatcher(response.encodeURL("/displayInventory.do"));
+		RequestDispatcher dispatch = request.getRequestDispatcher(response.encodeURL("/displayInventory.jsp"));
 		dispatch.forward(request, response);
 	}
 	
