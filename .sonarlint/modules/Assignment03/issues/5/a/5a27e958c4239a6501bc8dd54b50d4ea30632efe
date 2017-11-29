@@ -1,0 +1,7 @@
+
+gsquid:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿HòRMAJORZ
+CODE_SMELL
+Šsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Â÷ŸòþÿÿÿÿHðRMINORZ
+CODE_SMELL
+bsquid:S1989%"&Add a "try/catch" block for "forward".(¸Ú›Úúÿÿÿÿ8È¶½¥ÿ+H¼RMINORZVULNERABILITY
+bsquid:S1989%"&Add a "try/catch" block for "forward".(¸Ú›Úúÿÿÿÿ8È¶½¥ÿ+H½RMINORZVULNERABILITY

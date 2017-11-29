@@ -1,0 +1,24 @@
+
+^squid:S2093#"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHcRCRITICALZ
+CODE_SMELL
+^squid:S2093C"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHdRCRITICALZ
+CODE_SMELL
+i
+squid:S106,"9Replace this use of System.out or System.err by a logger.(¿ìÛÇùÿÿÿÿHeRMAJORZ
+CODE_SMELL
+i
+squid:S1061"9Replace this use of System.out or System.err by a logger.(Ç·¾åüÿÿÿÿHfRMAJORZ
+CODE_SMELL
+i
+squid:S106K"9Replace this use of System.out or System.err by a logger.(ŠèËÄùÿÿÿÿHgRMAJORZ
+CODE_SMELL
+fsquid:S1141'"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿHhRMAJORZ
+CODE_SMELL
+ssquid:S00112X"FDefine and throw a dedicated exception instead of using a generic one.(°°ÔİHiRMAJORZ
+CODE_SMELL
+ssquid:S00112g"FDefine and throw a dedicated exception instead of using a generic one.( ÏµÂHjRMAJORZ
+CODE_SMELL
+xsquid:S00112T"FDefine and throw a dedicated exception instead of using a generic one.(èåçıÿÿÿÿHkRMAJORZ
+CODE_SMELL
+„squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¿œœõHlRMINORZ
+CODE_SMELL

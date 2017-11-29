@@ -1,0 +1,4 @@
+
+Šsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ê¹¢›üÿÿÿÿHÅRMINORZ
+CODE_SMELL
+{squid:S1206"PThis class overrides "equals()" and should therefore also override "hashCode()".(Ý¢êÍýÿÿÿÿHÄRMINORZBUG

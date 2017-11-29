@@ -1,0 +1,20 @@
+
+bsquid:S1989$"&Add a "try/catch" block for "forward".(µˆŠ‹þÿÿÿÿ8ò¢ÁŠÿ+HˆRMINORZVULNERABILITY
+gsquid:S1161*":Add the "@Override" annotation above this method signature(‹¨¯¿H’RMAJORZ
+CODE_SMELL
+q
+squid:S106<"9Replace this use of System.out or System.err by a logger.(ðîåÿÿÿÿÿ8ŒË‰ÿ+H‡RMAJORZ
+CODE_SMELL
+bsquid:S1989$"&Add a "try/catch" block for "forward".(µˆŠ‹þÿÿÿÿ8ò¢ÁŠÿ+HRMINORZVULNERABILITY
+l
+squid:S1060"9Replace this use of System.out or System.err by a logger.(¿ªúé8ŒË‰ÿ+HRMAJORZ
+CODE_SMELL
+lsquid:S1161":Add the "@Override" annotation above this method signature(ÌÂèÆüÿÿÿÿHŽRMAJORZ
+CODE_SMELL
+Ysquid:S1989+"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿH‰RMINORZVULNERABILITY
+Ysquid:S1989+"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿH‘RMINORZVULNERABILITY
+l
+squid:S1066"9Replace this use of System.out or System.err by a logger.(·ÐÖ”8”ûÈ‰ÿ+H”RMAJORZ
+CODE_SMELL
+…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¿œœõH‹RMINORZ
+CODE_SMELL

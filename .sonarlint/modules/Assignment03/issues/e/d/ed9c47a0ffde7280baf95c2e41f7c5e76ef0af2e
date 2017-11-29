@@ -1,0 +1,14 @@
+
+squid:UselessImportCheck"@Remove this unused import 'javax.servlet.annotation.WebServlet'.(™ì¢´şÿÿÿÿHæRMINORZ
+CODE_SMELL
+ysquid:S1192,"JDefine a constant instead of duplicating this literal "</td><td>" 6 times.(ÆÄÏHçRCRITICALZ
+CODE_SMELL
+Šsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Â÷ŸòşÿÿÿÿHèRMINORZ
+CODE_SMELL
+`squid:S1989"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿ8ºÿ€Œÿ+HéRMINORZVULNERABILITY
+`squid:S1989"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿ8ºÿ€Œÿ+HêRMINORZVULNERABILITY
+dsquid:S1989"(Add a "try/catch" block for "getWriter".(ïô†úÿÿÿÿ8ºÿ€Œÿ+HëRMINORZVULNERABILITY
+nsquid:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿8ºÿ€Œÿ+HìRMAJORZ
+CODE_SMELL
+ssquid:S1161":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ8ºÿ€Œÿ+HíRMAJORZ
+CODE_SMELL

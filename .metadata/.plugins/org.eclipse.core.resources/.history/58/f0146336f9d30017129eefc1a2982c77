@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.util.Map"%>
+<%@ page import="java.util.HashMap"%>
+<%@ page import="java.util.LinkedHashMap"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%! String query1 = "SELECT CUSTOMER.CUSTOMER_ID, CUSTOMER.CUSTOMER_NAME "+ 
+	    "FROM CUSTOMER INNER JOIN SALES_ORDER ON SALES_ORDER.CUSTOMER_ID = CUSTOMER.CUSTOMER_ID "+
+	    "GROUP BY CUSTOMER.CUSTOMER_ID, CUSTOMER.CUSTOMER_NAME";
+	String query2 = "SELECT SUM(SALES_ORDER_LINE_ITEM.QUANTITY) AS Quantity, "+ 
+	    "BOM.OUTPUT_DESCRIPTION AS Product, SALES_ORDER.BILLING_DATE FROM SALES_ORDER_LINE_ITEM "+ 
+	    "INNER JOIN sales_order ON SALES_ORDER_LINE_ITEM.SALES_ORDER_ID = SALES_ORDER.SALES_ORDER_ID "+ 
+	    "INNER JOIN CUSTOMER ON CUSTOMER.CUSTOMER_ID = SALES_ORDER.CUSTOMER_ID "+
+	    "INNER JOIN BOM ON BOM.EFFECTIVE_DATE = SALES_ORDER.DELIVERY_DATE "+ 
+	    "AND BOM.OUTPUT_PRODUCT_ID = SALES_ORDER_LINE_ITEM.PRODUCT_ID "+ 
+	    "WHERE CUSTOMER.CUSTOMER_ID = ? GROUP BY "+
+	    "BOM.OUTPUT_DESCRIPTION, SALES_ORDER.BILLING_DATE";
+	String query3 ="SELECT SIM_DATE FROM CURRENT_SIM_DATE"; 
+	/* String query3 ="SELECT SIM_DATE.SIM_DATE FROM CURRENT_SIM_DATE "+
+	    "INNER JOIN SIM_DATE ON CURRENT_SIM_DATE.CUR_NB_DAYS >= SIM_DATE.NB_DAYS "+
+	    "WHERE VDAY <= MAX_DAYS_PER_ROUND"; */
+%>
+<% 	
+	ResultSet clients = null;
+	ResultSet products = null;
+	ResultSet dates = null;
+	String server = "avenger.hec.ca\\erpsim";
+    String database = "ERPSIM";
+    String password = "ERPSIM";
+	String path = null;
+	Map<String, Map<String, Integer>> productDateMap = new HashMap<>();
+	Map<String, Integer> dateMap = new LinkedHashMap<>();;
+	try{	
+		/* Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String connectionUrl = "jdbc:sqlserver://"+server+";databaseName="+database+";user=DAIRY1;password="+password+";";
+        Connection connection = (Connection) DriverManager.getConnection(connectionUrl); */
+        Class.forName("com.mysql.jdbc.Driver");
+        String connectionUrl = "jdbc:mysql://localhost:3306/ERPSIM";
+        Connection connection = (Connection) DriverManager.getConnection(connectionUrl, "root", "system");
+		Statement st = connection.createStatement();
+		clients = st.executeQuery(query1);
+		String client = request.getParameter("client");
+		if(client != "" && client != null && !client.equals("&")){
+			Statement st2 = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			products = st2.executeQuery(query2.replace("?", client));
+			Statement st3 = connection.createStatement();
+			dates =  st3.executeQuery(query3);
+			if(dates != null && products != null){
+				while(dates.next()){
+					dateMap.put(dates.getString(1), 0);
+				}
+				while(products.next()){
+					int quantity = products.getInt(1);
+					String product = products.getString(2);
+					String date = products.getString(3);
+					//System.out.println(product+";"+date+";"+quantity);
+					Map<String, Integer> map = null;
+					if(productDateMap.get(product) == null){
+						productDateMap.put(product, new LinkedHashMap<>(dateMap));
+						map = productDateMap.get(product);
+						map.put(date, quantity);
+					}else{
+						map = productDateMap.get(product);
+						if(map.get(date) != null)
+							map.put(date, map.get(date)+quantity);
+					}
+					productDateMap.put(product, map);
+				}
+				/* for(Map.Entry<String, Map<String, Integer>> entry : productDateMap.entrySet()){
+					System.out.println("Product: "+entry.getKey());
+					for(Map.Entry<String, Integer> item : entry.getValue().entrySet()){
+						System.out.println(item.getKey()+", "+item.getValue());
+				 	}
+				}*/
+			}	
+		}
+	}catch(Exception e){
+		System.out.println("Could not connect to database");
+		e.printStackTrace();
+	}
+%>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Sales Statistics</title>
+	<script type="text/javascript">
+		function init(){
+			if(localStorage.getItem('selectedIndex') > 0){
+				document.getElementById("customerDropDown").options[localStorage.getItem('selectedIndex')].selected = true;
+				document.getElementById('btnTable').style.display = "inline-block";
+				document.getElementById('btnGraph').style.display = "inline-block";
+			}else{
+				document.getElementById('btnTable').style.display = "none";
+				document.getElementById('btnGraph').style.display = "none";
+			}	
+				var ctx = document.getElementById('myChart').getContext('2d');
+				var options = {
+						scales: {
+							xAxes: [ { ticks: { autoSkip: false }
+								 } ]
+							}
+					};
+				var donnees = {
+					    labels: [
+					    	<%int noOfDates = dateMap.size(); 
+					    	  int counter1 = 0;	
+					    	  for(Map.Entry<String, Integer> date : dateMap.entrySet()){%>
+					    	  	"<%=date.getKey()%>"
+					    	  	<%if(counter1 +1 < noOfDates){counter1++;%>
+					    	  		,
+					    	<%}}%>		
+					    ],
+					    datasets: [
+					    	<%int noOfProducts = productDateMap.size(); 
+					    	  int counter2 = 0;	
+					    	  for(Map.Entry<String, Map<String,Integer>> product : productDateMap.entrySet()){%>
+					    	  {
+							      label: '<%=product.getKey()%>',
+							      data:[
+							    	  <% int counter3 = 0;
+							    	  for(Map.Entry<String, Integer> date : product.getValue().entrySet()){
+							    	  %>
+							    	  <%=date.getValue()%>
+							    	  <%if(counter3 +1 < noOfDates){counter3++;%>
+							    	  ,
+							    	  <%}}%>
+							      ]}
+					    	  	<%if(counter2 +1 < noOfProducts){counter2++;%>
+					    	  		,
+					    	<%}}%>
+					    ]
+					  };
+				alert(donnees);
+				var myChart = new Chart(ctx, {
+				  type: 'line',
+				  data: donnees,
+				  options: options
+				}); 
+		}
+		
+		function fetchClientDetails(e){
+			var selectedValue= e.options[e.selectedIndex].value;
+			localStorage.setItem('selectedIndex',e.selectedIndex);
+			if(e.selectedIndex > 0){
+				window.location.replace("sales.jsp?client=" + selectedValue);
+			}else{
+				window.location.replace("sales.jsp?client=&");
+			}
+		}
+		
+		function tableView(){
+			localStorage.removeItem('view');
+		}
+		
+		function graphView(){
+			alert('graph');
+			localStorage.setItem('view','graph');
+		}
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+</head>
+<body onload="init();">
+	<div class="header">
+		Client : <select id="customerDropDown" onchange="fetchClientDetails(this);">
+			<option value="&" selected>--Choose Client--</option>
+			<%if(clients != null){ 
+	            while(clients.next()){%>
+					<option value="<%=clients.getString(1) %>"><%=clients.getString(2) %></option>
+			<%}} %>
+		</select> 
+		<input type="button" id="btnTable" value="Table" onclick="tableView();"/> 
+		<input type="button" id="btnGraph" value="Graph" onclick="graphView();"/>
+	</div>
+	<div>
+		<table>
+			<tr>
+				<th>Date</th>
+				<th>Product</th>
+				<th>Quantity</th>
+			</tr>
+			<%if(products != null){
+	            	while(products.next()){%>
+			<tr>
+				<td><%=products.getString(3) %></td>
+				<td><%=products.getString(2) %></td>
+				<td><%=products.getString(1) %></td>
+			</tr>
+			<%}}%>
+		</table>
+	</div>
+	<div>
+		<%if(path != null) {%>
+			<canvas id="myChart" width='800' height='600'></canvas>
+		<%} %>
+	</div>
+</body>
+</html>
