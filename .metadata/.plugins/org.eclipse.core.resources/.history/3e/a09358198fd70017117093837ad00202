@@ -1,0 +1,20 @@
+package com.main;
+
+import javax.swing.SwingUtilities;
+
+import com.mvc.view.MainFrame;
+
+public class Client {
+	public static void main(String [] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                displayJFrame();
+            }
+        });
+    }
+    private void displayJFrame() {
+        MainFrame m = new MainFrame();
+        new DialogWindow(m);
+    }
+}

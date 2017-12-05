@@ -1,0 +1,17 @@
+package com.mvc.view;
+
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+
+public class MainFrame extends JFrame{
+
+	public MainFrame() {
+		super();
+		setLayout(new GridLayout(2, 2, 5, 5));
+		addComponents();
+	}
+
+	private void addComponents() {
+	}
+}

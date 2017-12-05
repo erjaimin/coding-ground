@@ -1,0 +1,122 @@
+package com.mvc.controller;
+
+import java.awt.Component;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import com.main.ImageUtil;
+import com.mvc.model.ImageModel;
+import com.mvc.model.PerspectiveModel;
+import com.mvc.view.MainFrame;
+
+public class ModelViewController {
+	private MainFrame view;
+	private ImageModel imgModel;
+	private PerspectiveModel topPerspectiveModel;
+	private PerspectiveModel bottomPerspectiveModel;
+	private ZoomCommand zTopCommand;
+	private ZoomCommand zBottomCommand;
+	private TranslateCommand tTopCommand;
+	private TranslateCommand tBottomCommand;
+	private SaveCommand saveCommand;
+	private LoadCommand loadCommand;
+
+	public ModelViewController(MainFrame view, ImageModel imgModel, PerspectiveModel topPerspectiveModel,
+			PerspectiveModel bottomPerspectiveModel) {
+		this.view = view;
+		this.imgModel = imgModel;
+		this.topPerspectiveModel = topPerspectiveModel;
+		this.bottomPerspectiveModel = bottomPerspectiveModel;
+		this.loadCommand = new LoadCommand(imgModel, topPerspectiveModel, bottomPerspectiveModel);
+		setUpListeners();
+	}
+
+	private void setUpListeners() {
+		view.getOpen().addActionListener(e -> {
+			view.openFileDialog();
+			File selectedFile = view.getFileChooser().getSelectedFile();
+			if(selectedFile != null){
+				updateModels(selectedFile);
+				this.zTopCommand = new ZoomCommand(topPerspectiveModel);
+				this.zBottomCommand = new ZoomCommand(bottomPerspectiveModel);
+				this.tTopCommand = new TranslateCommand(topPerspectiveModel);
+				this.tBottomCommand = new TranslateCommand(bottomPerspectiveModel);
+				this.saveCommand = new SaveCommand(imgModel, topPerspectiveModel, bottomPerspectiveModel);
+			}	
+		});
+
+		view.getQuit().addActionListener(e -> System.exit(0));
+
+		Component topPanel = view.getPerspectivePlane().getLeftComponent();
+		Component bottomPanel = view.getPerspectivePlane().getRightComponent();
+		topPanel.addMouseWheelListener(e -> executeZoomCommand(e, zTopCommand));
+		bottomPanel.addMouseWheelListener(e -> executeZoomCommand(e, zBottomCommand));
+		topPanel.addMouseListener(new MouseAdapter() {
+			Point startPoint;
+		    @Override
+		    public void mousePressed(MouseEvent e) {
+		    	startPoint = e.getPoint();
+		    }
+		    @Override
+		    public void mouseReleased(MouseEvent e) {
+		    	executeTranslateCommand(e, tTopCommand, startPoint);
+		    }
+		});
+		
+		bottomPanel.addMouseListener(new MouseAdapter() {
+			Point startPoint;
+		    @Override
+		    public void mousePressed(MouseEvent e) {
+		    	startPoint = e.getPoint();
+		    }
+		    @Override
+		    public void mouseReleased(MouseEvent e) {
+		    	executeTranslateCommand(e, tBottomCommand, startPoint);
+		    }
+		});
+		view.getSave().addActionListener(e -> {
+			if(imgModel.getInputFile() != null){
+				view.openSaveDialog();
+				saveCommand.setFile(view.getFileChooser().getSelectedFile());
+				saveCommand.execute();
+			}else{
+				view.showErrorDialog("Choose image first!");
+			}
+		});
+		view.getLoad().addActionListener(e -> {
+			view.openFileDialog();
+			loadCommand.setFile(view.getFileChooser().getSelectedFile());
+			loadCommand.execute();
+		});
+		
+	}
+
+	private void executeZoomCommand(MouseWheelEvent e, ZoomCommand command) {
+		if(imgModel.getInputFile() != null){
+			command.setNotches(e.getWheelRotation());
+			command.execute();
+		}	
+	}
+
+	private void executeTranslateCommand(MouseEvent e, TranslateCommand command, Point startPoint) {
+		if(imgModel.getInputFile() != null){
+			int thisX = command.getLocation().x;
+	    	int thisY = command.getLocation().y;
+	    	int xMoved = e.getX() - startPoint.x;
+	        int yMoved = e.getY() - startPoint.y;
+	        command.setLocation(new Point(thisX + xMoved, thisY + yMoved));
+	        command.execute();
+		}    
+	}
+	
+	private void updateModels(File selectedFile) {
+		BufferedImage readImage = ImageUtil.readImage(selectedFile);
+		imgModel.setInputFile(selectedFile);
+		topPerspectiveModel.setImage(readImage);
+		bottomPerspectiveModel.setImage(readImage);
+	}
+
+}

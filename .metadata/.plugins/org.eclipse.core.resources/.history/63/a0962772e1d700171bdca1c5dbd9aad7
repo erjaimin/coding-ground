@@ -1,0 +1,48 @@
+package com.mvc.controller;
+
+
+import java.awt.Component;
+
+import com.main.PatternObjectFactroy;
+import com.mvc.model.ImageModel;
+import com.mvc.model.PerspectiveModel;
+import com.mvc.view.MainFrame;
+
+public class ModelViewController {
+	private MainFrame view;
+	private ImageModel imgModel;
+	private PerspectiveModel topPerspectiveModel;
+	private PerspectiveModel bottomPerspectiveModel;
+	
+	public ModelViewController(MainFrame view, ImageModel imgModel) {
+		this.view = view;
+		this.imgModel = imgModel;
+		setUpListeners();
+	}
+
+	private void setUpListeners() {
+		view.getOpen().addActionListener(e->{
+			view.openFileDialog();
+			imgModel.setInputFile(view.getFileChooser().getSelectedFile());
+		});
+		
+		view.getQuit().addActionListener(e -> System.exit(0));
+		
+		Component topPanel = view.getPerspectivePlane().getLeftComponent();
+		topPanel.addMouseWheelListener( e -> {
+			 int notches = e.getWheelRotation();
+			 ZoomCommand zCommand = PatternObjectFactroy.getActionCommand(topPanel);
+             double temp = zoom - (notches * 0.2);
+             // minimum zoom factor is 1.0
+             temp = Math.max(temp, 1.0);
+             if (temp != zoom) {
+                 zoom = temp;
+                 resizeImage();
+             }
+             
+		});
+		
+	}
+	
+	
+ }

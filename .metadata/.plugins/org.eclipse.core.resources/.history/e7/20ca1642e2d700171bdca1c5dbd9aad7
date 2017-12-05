@@ -1,0 +1,19 @@
+package com.mvc.controller;
+
+import com.mvc.model.PerspectiveModel;
+
+public class ZoomCommand implements ViewActionCommand {
+
+	private static final double zoom =1.0;
+	private PerspectiveModel model;
+	
+	public ZoomCommand(PerspectiveModel model, int notches) {
+		this.model = model;
+	}
+	
+	@Override
+	public void execute() {
+		
+	}
+
+}

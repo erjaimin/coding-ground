@@ -1,0 +1,44 @@
+package com.mvc.model;
+
+import java.awt.image.BufferedImage;
+import java.util.Observable;
+
+public class ImageModel extends Observable{
+	
+	private BufferedImage image;
+	private String filePath;
+
+	/**
+	 * @return the image
+	 */
+	public BufferedImage getImage() {
+		return image;
+	}
+
+	/**
+	 * @param image the image to set
+	 */
+	public void setImage(BufferedImage image) {
+		this.image = image;
+		setChanged();
+		notifyObservers();
+	}
+
+	/**
+	 * @return the filePath
+	 */
+	public String getFilePath() {
+		return filePath;
+	}
+
+	/**
+	 * @param filePath the filePath to set
+	 */
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+	
+	
+	
+}

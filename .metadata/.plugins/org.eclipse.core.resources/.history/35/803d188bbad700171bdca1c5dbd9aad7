@@ -1,0 +1,17 @@
+package com.mvc.controller;
+
+import com.mvc.model.ImageModel;
+import com.mvc.model.PerspectiveModel;
+import com.mvc.view.MainFrame;
+
+public class ModelViewController {
+	private MainFrame view;
+	private ImageModel imgModel;
+	private PerspectiveModel perspectiveModel;
+	
+	public ModelViewController(MainFrame view, ImageModel imgModel) {
+		this.view = view;
+		this.imgModel = imgModel;
+	}
+	
+ }

@@ -1,0 +1,10 @@
+package com.main;
+
+import java.awt.Image;
+
+public class ImageUtil {
+
+	public static Image getScaledImage(){
+		
+	}
+}

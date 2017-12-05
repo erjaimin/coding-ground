@@ -1,0 +1,21 @@
+package com.main;
+
+import javax.swing.JPanel;
+
+import com.mvc.view.BottomPerspectiveView;
+import com.mvc.view.ImageView;
+import com.mvc.view.TopPerspectiveView;
+
+public class PatternObjectFactroy {
+
+	public static JPanel getJpanel(String viewName){
+		if(viewName.equals("image")){
+			return new ImageView();
+		}else if(viewName.equals("top")){
+			return new TopPerspectiveView();
+		}else if(viewName.equals("bottom")){
+			return new BottomPerspectiveView();
+		}
+		return null;
+	}
+}

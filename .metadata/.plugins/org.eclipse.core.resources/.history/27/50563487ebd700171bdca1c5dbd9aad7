@@ -1,0 +1,53 @@
+package com.mvc.controller;
+
+import java.awt.Component;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+import com.main.ImageUtil;
+import com.main.PatternObjectFactroy;
+import com.mvc.model.ImageModel;
+import com.mvc.model.PerspectiveModel;
+import com.mvc.view.MainFrame;
+
+public class ModelViewController {
+	private MainFrame view;
+	private ImageModel imgModel;
+	private PerspectiveModel topPerspectiveModel;
+	private PerspectiveModel bottomPerspectiveModel;
+	private ViewActionCommand zCommand;
+	private int notches;
+
+	public ModelViewController(MainFrame view, ImageModel imgModel, PerspectiveModel topPerspectiveModel,
+			PerspectiveModel bottomPerspectiveModel) {
+		this.view = view;
+		this.imgModel = imgModel;
+		this.topPerspectiveModel = topPerspectiveModel;
+		this.bottomPerspectiveModel = bottomPerspectiveModel;
+		this.zCommand = new ZoomCommand(model, notches);
+		setUpListeners();
+	}
+
+	private void setUpListeners() {
+		view.getOpen().addActionListener(e -> {
+			view.openFileDialog();
+			File selectedFile = view.getFileChooser().getSelectedFile();
+			imgModel.setInputFile(selectedFile);
+			topPerspectiveModel.setImage(ImageUtil.readImage(selectedFile));
+			bottomPerspectiveModel.setImage(ImageUtil.readImage(selectedFile));
+		});
+
+		view.getQuit().addActionListener(e -> System.exit(0));
+
+		Component topPanel = view.getPerspectivePlane().getLeftComponent();
+		topPanel.addMouseWheelListener(e -> {
+			int notches = e.getWheelRotation();
+			
+			zCommand.execute();
+
+		});
+
+	}
+
+}

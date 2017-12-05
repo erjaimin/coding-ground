@@ -1,0 +1,25 @@
+package com.mvc.view;
+
+import java.awt.Image;
+import java.util.Observable;
+import java.util.Observer;
+
+import javax.swing.JPanel;
+
+import com.main.ImageUtil;
+import com.mvc.model.ImageModel;
+
+public class BottomPerspectiveView extends JPanel implements Observer{
+
+	private static final long serialVersionUID = 8123206282683220917L;
+	private Image image;
+
+	@Override
+	public void update(Observable obv, Object arg) {
+		if(obv != null && obv instanceof ImageModel){
+			this.image = ImageUtil.getScaledImage(((ImageModel)obv).getInputFile(), this.getWidth(), this.getHeight());
+		}
+		repaint(); 
+	}
+
+}

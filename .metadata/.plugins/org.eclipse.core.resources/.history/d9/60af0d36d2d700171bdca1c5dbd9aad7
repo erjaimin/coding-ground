@@ -1,0 +1,9 @@
+package com.mvc.view;
+
+import java.util.Observer;
+
+import javax.swing.JPanel;
+
+public abstract class PerspectiveView extends JPanel implements Observer{
+
+}

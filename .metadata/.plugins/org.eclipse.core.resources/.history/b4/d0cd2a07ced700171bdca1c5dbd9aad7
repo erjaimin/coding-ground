@@ -1,0 +1,11 @@
+package com.mvc.controller;
+
+public class ZoomCommand implements ViewActionCommand {
+
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

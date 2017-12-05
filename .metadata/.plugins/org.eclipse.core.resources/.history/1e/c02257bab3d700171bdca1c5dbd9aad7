@@ -1,0 +1,77 @@
+package com.mvc.view;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JSplitPane;
+import javax.swing.WindowConstants;
+
+import com.main.Constants;
+import com.main.PatternObjectFactroy;
+
+public class MainFrame {
+	
+	private JSplitPane mainPane;
+	private JSplitPane perspectivePlane;
+	private JMenuItem open;
+	private JMenuItem save;
+	private JMenuItem load;
+	private JMenuItem quit;
+	private JMenuItem undo;
+	private JMenuItem redo;
+
+	public MainFrame() {
+		super();
+		addComponents();
+	}
+
+	private void addComponents() {
+		JFarem frame = PatternObjectFactroy.getJFrame();
+		
+		mainPane = PatternObjectFactroy.getJSplitPane();
+		mainPane.setLeftComponent(PatternObjectFactroy.getJpanel(Constants.IMAGE_VIEW));
+		
+	    perspectivePlane = PatternObjectFactroy.getJSplitPane();
+		perspectivePlane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		perspectivePlane.setResizeWeight(0.5);
+		perspectivePlane.setLeftComponent(PatternObjectFactroy.getJpanel(Constants.TOP_VIEW));
+		perspectivePlane.setRightComponent(PatternObjectFactroy.getJpanel(Constants.BOTTOM_VIEW));
+		
+		mainPane.setRightComponent(perspectivePlane);
+		mainPane.setResizeWeight(0.25);
+		frame.add(mainPane, BorderLayout.CENTER);
+		
+	    JMenuBar menuBar = PatternObjectFactroy.getJMenuBar();
+	    JMenu fileMenu = PatternObjectFactroy.getJMenu("File");
+	    JMenu editMenu = PatternObjectFactroy.getJMenu("Edit");
+		
+		open = PatternObjectFactroy.getJMenuItem("Open");
+		save = PatternObjectFactroy.getJMenuItem("Save");
+		load = PatternObjectFactroy.getJMenuItem("Load");
+		quit = PatternObjectFactroy.getJMenuItem("Quit");
+		undo = PatternObjectFactroy.getJMenuItem("Undo");
+		redo = PatternObjectFactroy.getJMenuItem("Redo");
+		
+		fileMenu.add(open);
+		fileMenu.add(save);
+		fileMenu.add(load);
+		fileMenu.add(quit);
+		
+		editMenu.add(undo);
+		editMenu.add(redo);
+		
+		menuBar.add(fileMenu);
+		menuBar.add(editMenu);
+		frame.add(menuBar, BorderLayout.NORTH);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(1200, 800));
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+		
+	}
+}

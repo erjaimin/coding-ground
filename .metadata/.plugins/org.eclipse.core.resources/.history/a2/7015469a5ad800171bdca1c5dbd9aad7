@@ -1,0 +1,53 @@
+package com.mvc.controller;
+
+import java.awt.Component;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import com.main.ImageUtil;
+import com.mvc.model.ImageModel;
+import com.mvc.model.PerspectiveModel;
+import com.mvc.view.MainFrame;
+
+public class ModelViewController {
+	private MainFrame view;
+	private ImageModel imgModel;
+	private PerspectiveModel topPerspectiveModel;
+	private PerspectiveModel bottomPerspectiveModel;
+	private ZoomCommand zCommand;
+
+	public ModelViewController(MainFrame view, ImageModel imgModel, PerspectiveModel topPerspectiveModel,
+			PerspectiveModel bottomPerspectiveModel) {
+		this.view = view;
+		this.imgModel = imgModel;
+		this.topPerspectiveModel = topPerspectiveModel;
+		this.bottomPerspectiveModel = bottomPerspectiveModel;
+		this.zCommand = new ZoomCommand(topPerspectiveModel);
+		setUpListeners();
+	}
+
+	private void setUpListeners() {
+		view.getOpen().addActionListener(e -> {
+			view.openFileDialog();
+			File selectedFile = view.getFileChooser().getSelectedFile();
+			updateModels(selectedFile);
+		});
+
+		view.getQuit().addActionListener(e -> System.exit(0));
+
+		Component topPanel = view.getPerspectivePlane().getLeftComponent();
+		topPanel.addMouseWheelListener(e -> {
+			zCommand.setNotches(e.getWheelRotation());
+			zCommand.execute();
+
+		});
+
+	}
+
+	private void updateModels(File selectedFile) {
+		BufferedImage readImage = ImageUtil.readImage(selectedFile);
+		imgModel.setInputFile(selectedFile);
+		topPerspectiveModel.setImage(readImage);
+		bottomPerspectiveModel.setImage(readImage);
+	}
+
+}

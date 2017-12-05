@@ -1,0 +1,27 @@
+package com.mvc.view;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.util.Observable;
+import java.util.Observer;
+
+import javax.swing.JPanel;
+
+public class ImageView extends JPanel implements Observer{
+
+	private static final long serialVersionUID = 7039659890399712325L;
+	
+	private BufferedImage image;
+
+	@Override
+	public void update(Observable obv, Object obj) {
+		System.out.println("imageview update");
+	}
+	
+	@Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters            
+    }
+
+}

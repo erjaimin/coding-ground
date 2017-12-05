@@ -1,0 +1,56 @@
+package com.mvc.controller;
+
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+
+import com.mvc.model.PerspectiveModel;
+
+public class ZoomCommand implements ViewActionCommand {
+
+	private PerspectiveModel model;
+	private int notches;
+	private Dimension dimension;
+	
+	public ZoomCommand(PerspectiveModel model) {
+		this.model = model;
+	}
+	
+	public boolean calculateZoom() {
+		boolean resize = false;
+		double zoom = model.getZoom();
+		double temp = zoom - (getNotches() * 0.05);
+		if (temp != zoom && temp > 0.2 && temp < 1.8) {
+            zoom = temp;
+            resize = true;
+            model.setZoom(zoom);
+            this.dimension = new Dimension(model.getImage().getWidth()*zoom, model.getImage().getHeight()*zoom);
+        }
+		return resize;
+	}
+	
+	@Override
+	public void execute() {
+		BufferedImage image = model.getImage();
+		if (image != null) {
+			this.zoom = model.getZoom();
+			int newWidth = (int) (image.getWidth() * );
+			int newHeight = (int) (image.getHeight() * model.getZoom());
+			model.updateDimentions(newWidth, newHeight);
+		}
+	}
+
+	/**
+	 * @return the notches
+	 */
+	public int getNotches() {
+		return notches;
+	}
+
+	/**
+	 * @param notches the notches to set
+	 */
+	public void setNotches(int notches) {
+		this.notches = notches;
+	}
+
+}

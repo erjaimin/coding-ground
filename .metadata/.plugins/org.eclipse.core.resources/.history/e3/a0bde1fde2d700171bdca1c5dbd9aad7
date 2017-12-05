@@ -1,0 +1,38 @@
+package com.mvc.model;
+
+import java.awt.image.BufferedImage;
+import java.util.Observable;
+
+public class PerspectiveModel extends Observable{
+	private BufferedImage image;
+	private boolean isUpdated;
+	
+	/**
+	 * @return the image
+	 */
+	public BufferedImage getImage() {
+		return image;
+	}
+	/**
+	 * @param image the image to set
+	 */
+	public void setImage(BufferedImage image) {
+		this.image = image;
+	}
+	/**
+	 * @return the isUpdated
+	 */
+	public boolean isUpdated() {
+		return isUpdated;
+	}
+	/**
+	 * @param isUpdated the isUpdated to set
+	 */
+	public void setUpdated(boolean isUpdated) {
+		this.isUpdated = isUpdated;
+		setChanged();
+		notifyObservers();
+	}
+	
+
+}

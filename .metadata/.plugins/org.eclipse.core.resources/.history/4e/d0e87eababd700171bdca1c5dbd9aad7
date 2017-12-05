@@ -1,0 +1,33 @@
+package com.mvc.view;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JSplitPane;
+
+import com.main.Constants;
+import com.main.PatternObjectFactroy;
+
+public class MainFrame extends JFrame{
+	
+
+	public MainFrame() {
+		super();
+		addComponents();
+	}
+
+	private void addComponents() {
+		JSplitPane mainPane = new JSplitPane();
+		mainPane.setLeftComponent(PatternObjectFactroy.getJpanel(Constants.IMAGE_VIEW));
+		
+		JSplitPane perspectivePlane = new JSplitPane();
+		perspectivePlane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		perspectivePlane.setLeftComponent(PatternObjectFactroy.getJpanel(Constants.TOP_VIEW));
+		perspectivePlane.setRightComponent(PatternObjectFactroy.getJpanel(Constants.BOTTOM_VIEW));
+		
+		mainPane.setRightComponent(perspectivePlane);
+		mainPane.setResizeWeight(0.25);
+		add(mainPane, BorderLayout.CENTER);
+	}
+}

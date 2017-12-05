@@ -1,0 +1,28 @@
+package com.main;
+
+import java.awt.Dimension;
+
+import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
+
+import com.mvc.controller.ModelViewController;
+import com.mvc.model.ImageModel;
+import com.mvc.view.MainFrame;
+
+
+public class Client {
+	public static void main(String [] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                displayJFrame();
+            }
+        });
+    }
+    private static void displayJFrame() {
+        MainFrame frame = new MainFrame();
+        ImageModel image = new ImageModel();
+        
+        ModelViewController contoller = new ModelViewController(frame, image);
+    }
+}

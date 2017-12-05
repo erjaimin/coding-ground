@@ -1,0 +1,32 @@
+package com.mvc.view;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.util.Observable;
+import java.util.Observer;
+
+import javax.swing.JPanel;
+
+import com.mvc.model.PerspectiveModel;
+
+public abstract class PerspectiveView extends JPanel implements Observer{
+	
+	private static final long serialVersionUID = -8828879571641152800L;
+	private Image image;
+	
+	@Override
+	public void update(Observable obv, Object arg) {
+		if(obv != null && obv instanceof PerspectiveModel){
+			PerspectiveModel model = (PerspectiveModel)obv;
+			this.image = model.getImage();
+		}
+		revalidate();
+		repaint(); 
+	}
+	
+	@Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(this.image, 0, 0, this); // see javadoc for more info on the parameters            
+    }
+}

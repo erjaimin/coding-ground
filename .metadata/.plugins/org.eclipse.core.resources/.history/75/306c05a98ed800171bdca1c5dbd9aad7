@@ -1,0 +1,29 @@
+package com.mvc.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CommandManager {
+	private List<ViewActionCommand> undoList = new ArrayList<>();
+	private List<ViewActionCommand> redoStack = new ArrayList<>();
+	
+	private static CommandManager commandManager = null;
+	
+	private CommandManager(){
+	}
+	
+	public static CommandManager getInstance() {
+		if(commandManager == null) {
+			commandManager = new CommandManager();
+		}
+		return commandManager;
+	}
+	
+	public void addToUndoStack(ViewActionCommand command) {
+		undoList.add(command);
+	}
+	
+	public void addToRedoStack(ViewActionCommand command) {
+		redoStack.add(command);
+	}
+}

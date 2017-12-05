@@ -1,0 +1,45 @@
+package com.mvc.controller;
+
+import java.awt.Component;
+import java.io.File;
+
+import com.main.PatternObjectFactroy;
+import com.mvc.model.ImageModel;
+import com.mvc.model.PerspectiveModel;
+import com.mvc.view.MainFrame;
+
+public class ModelViewController {
+	private MainFrame view;
+	private ImageModel imgModel;
+	private PerspectiveModel topPerspectiveModel;
+	private PerspectiveModel bottomPerspectiveModel;
+
+	public ModelViewController(MainFrame view, ImageModel imgModel, PerspectiveModel topPerspectiveModel,
+			PerspectiveModel bottomPerspectiveModel) {
+		this.view = view;
+		this.imgModel = imgModel;
+		this.topPerspectiveModel = topPerspectiveModel;
+		this.bottomPerspectiveModel = bottomPerspectiveModel;
+		setUpListeners();
+	}
+
+	private void setUpListeners() {
+		view.getOpen().addActionListener(e -> {
+			view.openFileDialog();
+			File selectedFile = view.getFileChooser().getSelectedFile();
+			imgModel.setInputFile(selectedFile);
+		});
+
+		view.getQuit().addActionListener(e -> System.exit(0));
+
+		Component topPanel = view.getPerspectivePlane().getLeftComponent();
+		topPanel.addMouseWheelListener(e -> {
+			int notches = e.getWheelRotation();
+			ViewActionCommand zCommand = PatternObjectFactroy.getActionCommand(topPerspectiveModel, notches);
+			zCommand.execute();
+
+		});
+
+	}
+
+}

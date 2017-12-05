@@ -1,0 +1,10 @@
+package com.mvc.controller;
+
+public class OpenFileCommand implements ViewActionCommand{
+
+	@Override
+	public void execute() {
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.mvc.model;
+
+import java.awt.Point;
+
+public class Memento {
+	private Point location;
+	
+	public Memento(Point location) {
+		this.location = location;
+	}
+}

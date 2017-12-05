@@ -1,0 +1,51 @@
+package com.mvc.controller;
+
+import java.awt.Point;
+
+import com.mvc.model.Memento;
+import com.mvc.model.PerspectiveModel;
+
+public class TranslateCommand implements ViewActionCommand{
+
+	private PerspectiveModel model;
+	private Point location;
+	private Memento memento;
+	
+	public TranslateCommand(PerspectiveModel model) {
+		this.model = model;
+		this.location = new Point(0, 0);
+	}
+
+	@Override
+	public void execute() {
+		memento.setLocation(new Point(model.getPositionX(), model.getPositionY()));
+		model.updateLocation(location);
+	}
+
+	/**
+	 * @return the model
+	 */
+	public PerspectiveModel getModel() {
+		return model;
+	}
+
+	/**
+	 * @return the location
+	 */
+	public Point getLocation() {
+		return location;
+	}
+
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(Point location) {
+		this.location = location;
+	}
+
+	@Override
+	public void unexecute() {
+		Point location = memento.getLocation();
+		model.updateDimentions(location.getX(), location.getY());
+	}
+}

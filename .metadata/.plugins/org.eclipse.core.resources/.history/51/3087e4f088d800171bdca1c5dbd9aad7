@@ -1,0 +1,10 @@
+package com.mvc.view;
+
+public class BottomPerspectiveView extends PerspectiveView{
+
+	private static final long serialVersionUID = 8123206282683220917L;
+
+	public void updateView(){
+		
+	}
+	}

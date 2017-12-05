@@ -1,0 +1,25 @@
+package com.mvc.controller;
+
+import java.io.File;
+
+import com.mvc.model.ImageModel;
+import com.mvc.model.PerspectiveModel;
+
+public class SaveCommand implements ViewActionCommand{
+
+	private File file;
+	private ImageModel imgModel;
+	private PerspectiveModel topPerspectiveModel;
+	private PerspectiveModel bottomPerspectiveModel;
+	
+	public SaveCommand(ImageModel imgModel, PerspectiveModel topPerspectiveModel,
+			PerspectiveModel bottomPerspectiveModel) {
+	}
+
+
+	@Override
+	public void execute() {
+		
+	}
+
+}

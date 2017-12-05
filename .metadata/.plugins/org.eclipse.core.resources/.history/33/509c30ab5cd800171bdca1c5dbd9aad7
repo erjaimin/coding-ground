@@ -1,0 +1,48 @@
+package com.mvc.controller;
+
+import com.mvc.model.PerspectiveModel;
+
+public class TranslateCommand implements ViewActionCommand{
+
+	private PerspectiveModel model;
+	private int positionX;
+	private int positionY;
+	
+	public TranslateCommand(PerspectiveModel model) {
+		this.model = model;
+	}
+
+	@Override
+	public void execute() {
+		
+	}
+
+	/**
+	 * @return the positionX
+	 */
+	public int getPositionX() {
+		return positionX;
+	}
+
+	/**
+	 * @param positionX the positionX to set
+	 */
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+
+	/**
+	 * @return the positionY
+	 */
+	public int getPositionY() {
+		return positionY;
+	}
+
+	/**
+	 * @param positionY the positionY to set
+	 */
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
+
+}

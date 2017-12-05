@@ -1,0 +1,15 @@
+package com.mvc.view;
+
+import javax.swing.JFrame;
+
+public class MainFrame extends JFrame{
+
+	public MainFrame() {
+		super();
+		addComponents();
+	}
+
+	private void addComponents() {
+		
+	}
+}

@@ -1,0 +1,51 @@
+package com.mvc.model;
+
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.util.Observable;
+
+public class PerspectiveModel extends Observable{
+	private BufferedImage image;
+	private int width;
+	private int height;
+	
+	/**
+	 * @return the image
+	 */
+	public BufferedImage getImage() {
+		return image;
+	}
+	/**
+	 * @param image the image to set
+	 */
+	public void setImage(BufferedImage image) {
+		this.image = image;
+		System.out.println("original size: ("+getWidth()+","+getHeight()+")");
+		setChanged();
+		notifyObservers();
+	}
+	/**
+	 * @return the width
+	 */
+	public int getWidth() {
+		return width;
+	}
+	/**
+	 * @param width the width to set
+	 */
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	/**
+	 * @return the height
+	 */
+	public int getHeight() {
+		return height;
+	}
+	/**
+	 * @param height the height to set
+	 */
+	public void setHeight(int height) {
+		this.height = height;
+	}
+}

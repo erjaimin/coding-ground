@@ -1,0 +1,10 @@
+package com.mvc.controller;
+
+public class SaveCommand implements ViewActionCommand{
+
+	@Override
+	public void execute() {
+		
+	}
+
+}

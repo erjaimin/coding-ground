@@ -1,0 +1,52 @@
+package com.mvc.view;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JSplitPane;
+
+import com.main.Constants;
+import com.main.PatternObjectFactroy;
+
+public class MainFrame extends JFrame{
+	
+
+	public MainFrame() {
+		super();
+		addComponents();
+	}
+
+	private void addComponents() {
+		JSplitPane mainPane = PatternObjectFactroy.getJSplitPane();
+		mainPane.setLeftComponent(PatternObjectFactroy.getJpanel(Constants.IMAGE_VIEW));
+		
+		JSplitPane perspectivePlane = PatternObjectFactroy.getJSplitPane();
+		perspectivePlane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		perspectivePlane.setResizeWeight(0.5);
+		perspectivePlane.setLeftComponent(PatternObjectFactroy.getJpanel(Constants.TOP_VIEW));
+		perspectivePlane.setRightComponent(PatternObjectFactroy.getJpanel(Constants.BOTTOM_VIEW));
+		
+		mainPane.setRightComponent(perspectivePlane);
+		mainPane.setResizeWeight(0.25);
+		add(mainPane, BorderLayout.CENTER);
+		
+		JMenuBar menuBar = PatternObjectFactroy.getJMenuBar();
+		JMenu fileMenu = PatternObjectFactroy.getJMenu("File");
+		JMenu editMenu = PatternObjectFactroy.getJMenu("Edit");
+		
+		JMenuItem open = PatternObjectFactroy.getJMenuItem("Open");
+		JMenuItem save = PatternObjectFactroy.getJMenuItem("Save");
+		JMenuItem load = PatternObjectFactroy.getJMenuItem("Load");
+		JMenuItem quit = PatternObjectFactroy.getJMenuItem("Quit");
+		JMenuItem undo = PatternObjectFactroy.getJMenuItem("Undo");
+		JMenuItem redo = PatternObjectFactroy.getJMenuItem("Redo");
+		
+		PatternObjectFactroy.buildJMenu(menuBar.getMenu(0), "Open", "Save", "Load", "Quit");
+		PatternObjectFactroy.buildJMenu(menuBar.getMenu(1), "Undo", "Redo");
+		add(menuBar, BorderLayout.NORTH);
+	}
+}
