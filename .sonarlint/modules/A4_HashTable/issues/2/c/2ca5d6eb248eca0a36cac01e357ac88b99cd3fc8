@@ -1,0 +1,8 @@
+
+Zsquid:S2157"%Add a "clone()" method to this class.(ê¼ ÒüÿÿÿÿHÛ%RCRITICALZ
+CODE_SMELL
+}squid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(ÏåÉ°úÿÿÿÿHÜ%RMAJORZ
+CODE_SMELL
+œ"squid:ClassVariableVisibilityCheck"PMake next a static final constant or non-public and provide accessors if needed.(ÛŒ¬üÿÿÿÿHÝ%RMINORZVULNERABILITY
+…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(±—²HÞ%RMINORZ
+CODE_SMELL
