@@ -1,7 +1,0 @@
-package com.mvc.view;
-
-import javax.swing.JPanel;
-
-public class BottomPerspectiveView extends JPanel{
-
-}

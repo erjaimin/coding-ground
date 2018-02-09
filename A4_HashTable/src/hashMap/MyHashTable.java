@@ -10,7 +10,7 @@ import java.util.Iterator;
  * @param <K> key
  * @param <V> value
  */
-class MyHashTable<K,V> {
+public class MyHashTable<K,V> {
 	
 	/**
 	 * Number of entries in the HashTable.
@@ -22,6 +22,8 @@ class MyHashTable<K,V> {
 	 * which eventually can get changed by invoking the rehash() method.
 	 */
 	private int numBuckets;
+	
+	private int threshold;
 
 	/**
 	 * Threshold load factor for rehashing.
@@ -41,7 +43,7 @@ class MyHashTable<K,V> {
 	 * creates an insatnce of {@link MyHashTable}
 	 * @param numBuckets is the initial number of buckets used by this hash table
 	 */
-	MyHashTable(int numBuckets) {
+	public MyHashTable(int numBuckets) {
 		this.numBuckets = numBuckets;
 		initializeBuckets(numBuckets);
 	}
@@ -81,17 +83,19 @@ class MyHashTable<K,V> {
 	public  V  put(K key, V value) {
 		HashLinkedList<K, V> hashLinkedList = getHashLinkedListByKey(key);
 		if(hashLinkedList.isEmpty()){
-			entryCount++;
+			threshold++;
 		}
 		// get the old value if key exists
 		V oldValue = get(key);
+		if(oldValue != null){
+			hashLinkedList.add(key, value);
+			return oldValue;
+		}
 		hashLinkedList.add(key, value);
+		++entryCount;
 		// increase the capacity if reached load factor
 		if(checkLoadFactor()){
 			rehash();
-		}
-		if(oldValue != null){
-			return oldValue;
 		}
 		return null;
 	}
@@ -101,8 +105,8 @@ class MyHashTable<K,V> {
 	 * @return
 	 */
 	private boolean checkLoadFactor() {
-		double currentLoadFactor = (double)entryCount/numBuckets;
-		return currentLoadFactor > MAX_LOAD_FACTOR;
+		double currentLoadFactor = (double)threshold/numBuckets;
+		return currentLoadFactor >= MAX_LOAD_FACTOR;
 		
 	}
 
@@ -169,6 +173,7 @@ class MyHashTable<K,V> {
 		for (int ct = 0; ct < buckets.size(); ct++){
 			buckets.get(ct).clear();
 		}
+		threshold=0;
 		entryCount=0;		
 	}
 

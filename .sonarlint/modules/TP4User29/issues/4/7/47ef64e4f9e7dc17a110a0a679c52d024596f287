@@ -1,0 +1,5 @@
+
+^squid:S1989""'Add a "try/catch" block for "parseInt".(°…ÿ’8ªôµ“„,Hñ/RMINORZVULNERABILITY
+lsquid:S1161":Add the "@Override" annotation above this method signature(Ïû©ÖûÿÿÿÿHò/RMAJORZ
+CODE_SMELL
+bsquid:S1989$"+Add a "try/catch" block for "sendRedirect".(¦™Ñ‘8ªôµ“„,Hð/RMINORZVULNERABILITY

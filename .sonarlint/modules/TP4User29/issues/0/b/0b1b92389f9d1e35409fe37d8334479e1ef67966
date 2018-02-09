@@ -1,0 +1,7 @@
+
+gsquid:S1118":Add a private constructor to hide the implicit public one.(è±ŒôH‰0RMAJORZ
+CODE_SMELL
+Zsquid:S1905"-Remove this unnecessary cast to "Connection".(»ˆ¹²Hˆ0RMINORZ
+CODE_SMELL
+Xsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHŠ0RMINORZVULNERABILITY
+Wsquid:S2068" Remove this hard-coded password.(×ßêÌûÿÿÿÿH‡0RBLOCKERZVULNERABILITY

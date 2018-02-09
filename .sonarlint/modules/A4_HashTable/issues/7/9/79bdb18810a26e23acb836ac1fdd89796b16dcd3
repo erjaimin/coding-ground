@@ -1,48 +1,52 @@
 
-|squid:S1192"GDefine a constant instead of duplicating this literal "Scream" 3 times.(ÄáŠ‚úÿÿÿÿH³%RCRITICALZ
-CODE_SMELL
-}squid:S1192"MDefine a constant instead of duplicating this literal "Fallen Angel" 3 times.(İÉûãH´%RCRITICALZ
-CODE_SMELL
-€squid:S1192"KDefine a constant instead of duplicating this literal "Black Flag" 3 times.(ÄáŠ‚úÿÿÿÿHµ%RCRITICALZ
-CODE_SMELL
-†squid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷ÕØ´H¶%RMINORZ
-CODE_SMELL
-‹squid:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").(ß±ˆğúÿÿÿÿH·%RMINORZ
+e
+squid:S106)"9Replace this use of System.out or System.err by a logger.(Š±ü‘H²(RMAJORZ
 CODE_SMELL
 j
-squid:S106&"9Replace this use of System.out or System.err by a logger.(¿ØÒĞşÿÿÿÿH¸%RMAJORZ
+squid:S1066"9Replace this use of System.out or System.err by a logger.(ëâÿÏÿÿÿÿÿH³(RMAJORZ
 CODE_SMELL
 e
-squid:S106'"9Replace this use of System.out or System.err by a logger.(æ¡ÁíH¹%RMAJORZ
+squid:S106Q"9Replace this use of System.out or System.err by a logger.(„–èÆH´(RMAJORZ
 CODE_SMELL
 e
-squid:S106,"9Replace this use of System.out or System.err by a logger.(Š±ü‘Hº%RMAJORZ
+squid:S106V"9Replace this use of System.out or System.err by a logger.(—«çŠHµ(RMAJORZ
+CODE_SMELL
+…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(±—²H¶(RMINORZ
 CODE_SMELL
 j
-squid:S1064"9Replace this use of System.out or System.err by a logger.(¿ØÒĞşÿÿÿÿH»%RMAJORZ
+squid:S106M"9Replace this use of System.out or System.err by a logger.(¿ØÒĞşÿÿÿÿH·(RMAJORZ
+CODE_SMELL
+˜squid:S1192$"aDefine a constant instead of duplicating this literal "number of buckets in hashtable: " 3 times.(æ¡Áí8÷ƒËÊ‚,H¸(RCRITICALZ
+CODE_SMELL
+†squid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷ÕØ´H¹(RMINORZ
+CODE_SMELL
+l
+squid:S106$"9Replace this use of System.out or System.err by a logger.(æ¡Áí8÷ƒËÊ‚,Hº(RMAJORZ
 CODE_SMELL
 e
-squid:S1065"9Replace this use of System.out or System.err by a logger.(æ¡ÁíH¼%RMAJORZ
+squid:S1061"9Replace this use of System.out or System.err by a logger.(æ¡ÁíH»(RMAJORZ
+CODE_SMELL
+squid:S1192#"RDefine a constant instead of duplicating this literal "number of songs: " 3 times.(¿ØÒĞşÿÿÿÿ8÷ƒËÊ‚,H¼(RCRITICALZ
+CODE_SMELL
+}squid:S1192"MDefine a constant instead of duplicating this literal "Fallen Angel" 3 times.(İÉûãH½(RCRITICALZ
 CODE_SMELL
 j
-squid:S106:"9Replace this use of System.out or System.err by a logger.(ëâÿÏÿÿÿÿÿH½%RMAJORZ
+squid:S106W"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH¾(RMAJORZ
 CODE_SMELL
 e
-squid:S106J"9Replace this use of System.out or System.err by a logger.(„–èÆH¾%RMAJORZ
+squid:S106N"9Replace this use of System.out or System.err by a logger.(æ¡ÁíH¿(RMAJORZ
 CODE_SMELL
-e
-squid:S106O"9Replace this use of System.out or System.err by a logger.(—«çŠH¿%RMAJORZ
+q
+squid:S106#"9Replace this use of System.out or System.err by a logger.(¿ØÒĞşÿÿÿÿ8÷ƒËÊ‚,HÀ(RMAJORZ
+CODE_SMELL
+ƒsquid:S1192"GDefine a constant instead of duplicating this literal "Scream" 4 times.(ÄáŠ‚úÿÿÿÿ8¬×ˆÄ‚,HÁ(RCRITICALZ
+CODE_SMELL
+Œsquid:S1149'"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ÄêHÂ(RMAJORZ
+CODE_SMELL
+‹squid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ß±ˆğúÿÿÿÿHÃ(RMINORZ
 CODE_SMELL
 j
-squid:S106P"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿHÀ%RMAJORZ
+squid:S1060"9Replace this use of System.out or System.err by a logger.(¿ØÒĞşÿÿÿÿHÄ(RMAJORZ
 CODE_SMELL
-…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(±—²HÁ%RMINORZ
-CODE_SMELL
-osquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»ÚıÿÿÿÿHÂ%RMINORZ
-CODE_SMELL
-nsquid:UselessImportCheck"/Remove this unused import 'java.io.FileReader'.(Â¡¢äşÿÿÿÿHÃ%RMINORZ
-CODE_SMELL
-msquid:UselessImportCheck"3Remove this unused import 'java.io.BufferedReader'.(€é²ÅHÄ%RMINORZ
-CODE_SMELL
-Œsquid:S1149*"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ÄêHÅ%RMAJORZ
+€squid:S1192"KDefine a constant instead of duplicating this literal "Black Flag" 3 times.(ÄáŠ‚úÿÿÿÿHÅ(RCRITICALZ
 CODE_SMELL

@@ -18,7 +18,7 @@ public class HashLinkedList<K,V>{
 	/**
 	 * creates an instance of {@link HashLinkedList}
 	 */
-	HashLinkedList(){
+	public HashLinkedList(){
 		head = null;
 		size = 0;
 	}
@@ -30,16 +30,16 @@ public class HashLinkedList<K,V>{
 	 */
 	public void add(K key, V value){
 		HashNode<K,V> temp = head;
-		while(head != null){
-			if(head.getKey().equals(key)){
-				head.setValue(value);
+		while(temp != null){
+			if(temp.getKey().equals(key)){
+				temp.setValue(value);
 				return;
 			}
-			head = head.next;
+			temp = temp.next;
 		}
 		size++;
 		HashNode<K, V> newHashNode = new HashNode<>(key, value);
-		newHashNode.next = temp;
+		newHashNode.next = head;
 		head = newHashNode;
 	}
 
@@ -83,25 +83,25 @@ public class HashLinkedList<K,V>{
 	 * @return {@link HashNode} if exists otherwise return null
 	 */
 	public HashNode<K,V> remove(K key){
-		if(head != null){
-			HashNode<K,V> current = head;
-			if(head.getKey().equals(key)){
-				head = head.next;
-				size--;
-				return current;
-			}
-			HashNode<K,V> previous = null;
-			while( current != null && !current.getKey().equals(key)){
-				previous = current;
-				current = current.next;
-			}
-			
-			if(current != null){
-				size--;
-				previous.next = current.next;
-			}
-		}
-		return null;
+		HashNode<K,V> current = head, prev = null;
+        // If head node itself holds the key to be deleted
+        if (current != null && current.getKey().equals(key))
+        {
+            head = current.getNext(); // Changed head
+            size--;
+            return current;
+        }
+        // Search for the key to be deleted, keep track of the
+        while (current != null && !current.getKey().equals(key))
+        {
+            prev = current;
+            current = current.getNext();
+        }    
+        if (current == null) 
+        	return null;
+        prev.next = current.next;
+        size--;
+        return current;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class HashLinkedList<K,V>{
 	 * 
 	 * @return the size of linked list
 	 */
-	int size(){
+	public int size(){
 		return this.size;
 	}
 	

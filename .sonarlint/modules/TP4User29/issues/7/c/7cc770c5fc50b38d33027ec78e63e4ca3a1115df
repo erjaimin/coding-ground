@@ -1,0 +1,29 @@
+
+jsquid:S2095"5Close this "PreparedStatement" in a "finally" clause.(å”–¬ıÿÿÿÿ8õ¡°“„,Hô/RBLOCKERZBUG
+csquid:S2095¯".Close this "Connection" in a "finally" clause.(„é®ıÿÿÿÿ8™ÿä“„,Hü/RBLOCKERZBUG
+‹squid:S00117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æªüÿÿÿÿ8ŠØŒ’„,H„0RMINORZ
+CODE_SMELL
+ˆsquid:S00100]"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢–¸Äüÿÿÿÿ8”¹›„,H…0RMINORZ
+CODE_SMELL
+`squid:S1148º"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘‹’„,H÷/RMINORZVULNERABILITY
+csquid:S2095 ".Close this "Connection" in a "finally" clause.(„é®ıÿÿÿÿ8ñœ’„,Hó/RBLOCKERZBUG
+ˆsquid:S00100K"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÓÎ•ıÿÿÿÿ8”¹›„,Hı/RMINORZ
+CODE_SMELL
+`squid:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8öÓå”„,H‚0RMINORZVULNERABILITY
+`squid:S1148ƒ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ÿä“„,H0RMINORZVULNERABILITY
+dsquid:S2095{"5Close this "PreparedStatement" in a "finally" clause.(®¹‰ø8õ¡°“„,Hù/RBLOCKERZBUG
+ˆsquid:S00100Q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æªüÿÿÿÿ8”¹›„,Hş/RMINORZ
+CODE_SMELL
+†squid:S00116"QRename this field "annÃ©e" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ı¾ä8“…™„,Hõ/RMINORZ
+CODE_SMELL
+jsquid:S2095±"5Close this "PreparedStatement" in a "finally" clause.(Š¤‘üúÿÿÿÿ8öÓå”„,Hƒ0RBLOCKERZBUG
+bsquid:S2095y".Close this "Connection" in a "finally" clause.(„é®ıÿÿÿÿ8‘Óè’„,Hú/RBLOCKERZBUG
+‹squid:S00117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢–¸Äüÿÿÿÿ8•éÖ‘„,H†0RMINORZ
+CODE_SMELL
+jsquid:S2095¢"5Close this "PreparedStatement" in a "finally" clause.(×Šø¢øÿÿÿÿ8™ÿä“„,Hû/RBLOCKERZBUG
+‚squid:S00100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã‰Ó?8”¹›„,Hø/RMINORZ
+CODE_SMELL
+csquid:S2095‹".Close this "Connection" in a "finally" clause.(„é®ıÿÿÿÿ8öÓå”„,Hö/RBLOCKERZBUG
+‡squid:S00116"RRename this field "modÃ¨le" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¶ï‡8“…™„,Hÿ/RMINORZ
+CODE_SMELL
+`squid:S1148§"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘Óè’„,H€0RMINORZVULNERABILITY

@@ -1,8 +1,10 @@
 
-Zsquid:S2157"%Add a "clone()" method to this class.(ê¼ ÒüÿÿÿÿHÛ%RCRITICALZ
+…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(±—²H&RMINORZ
 CODE_SMELL
-}squid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(ÏåÉ°úÿÿÿÿHÜ%RMAJORZ
+_squid:S1905 "+Remove this unnecessary cast to "HashNode".(Ñ›…8½È¤Ë‚,H¬(RMINORZ
 CODE_SMELL
-œ"squid:ClassVariableVisibilityCheck"PMake next a static final constant or non-public and provide accessors if needed.(ÛŒ¬üÿÿÿÿHİ%RMINORZVULNERABILITY
-…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(±—²HŞ%RMINORZ
+‰squid:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(¯áÑë8Ô†¸Ç‚,H¥'RBLOCKERZ
+CODE_SMELL
+œ"squid:ClassVariableVisibilityCheck"PMake next a static final constant or non-public and provide accessors if needed.(ÛŒ¬üÿÿÿÿH’&RMINORZVULNERABILITY
+vsquid:UselessImportCheck"0Remove this unused import 'java.util.Hashtable'.(Œ»ÏÊüÿÿÿÿ8‰õÛË‚,H±(RMINORZ
 CODE_SMELL

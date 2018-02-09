@@ -1,41 +1,18 @@
 
-`squid:S1068"3Remove this unused "MAX_LOAD_FACTOR" private field.(ÙÏùéHÆ%RMAJORZ
+Nsquid:S1170"!Make this final field static too.(ÙÏùéH‚&RMINORZ
 CODE_SMELL
-‡squid:S2293¹"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞñİéHÇ%RMINORZ
+`squid:S1148¼"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€ÁÊÈ‚,H÷'RMINORZVULNERABILITY
+£squid:S1319ã"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(£×ÑşÿÿÿÿHö%RMINORZ
 CODE_SMELL
-‡squid:S2293Ê"YReplace the type specification in this constructor call with the diamond operator ("<>").(úËş¶HÈ%RMINORZ
+…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(±—²Hø%RMINORZ
 CODE_SMELL
-£squid:S1319¶"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(·í½›øÿÿÿÿHÉ%RMINORZ
+usquid:S2272ª"NAdd a "NoSuchElementException" for iteration beyond the end of the collection.(üîëÃH÷%RMINORZBUG
+ˆsquid:S00116"ZRename this field "MAX_LOAD_FACTOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÏùéH†&RMINORZ
 CODE_SMELL
-£squid:S1319È"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(£×ÑşÿÿÿÿHÊ%RMINORZ
+Esquid:S26766"Use the original value instead.(ê’ìH‰&RMINORZBUG
+squid:S1149ó"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰Hˆ&RMAJORZ
 CODE_SMELL
-osquid:S1126¬"AReplace this if-then-else statement by a single return statement.(ŒşùõHË%RMINORZ
+osquid:S1126Ê"AReplace this if-then-else statement by a single return statement.(ŒşùõHƒ&RMINORZ
 CODE_SMELL
-Esquid:S26765"Use the original value instead.(ê’ìHÌ%RMINORZBUG
-[squid:S1481¹"-Remove this unused "listKeys" local variable.(ĞñİéHÍ%RMINORZ
-CODE_SMELL
-]squid:S1481Ê"/Remove this unused "listValues" local variable.(úËş¶HÎ%RMINORZ
-CODE_SMELL
-Wsquid:S1172V"*Remove this unused method parameter "key".(µ„Ô›HÏ%RMAJORZ
-CODE_SMELL
-\squid:S1172b"*Remove this unused method parameter "key".(ßŠºÎùÿÿÿÿHĞ%RMAJORZ
-CODE_SMELL
-Wsquid:S1172p"*Remove this unused method parameter "key".(‘‘ñ—HÑ%RMAJORZ
-CODE_SMELL
-Nsquid:S1170"!Make this final field static too.(ÙÏùéHÒ%RMINORZ
-CODE_SMELL
-Xsquid:S1168Â"+Return an empty collection instead of null.(§½—HÓ%RMAJORZ
-CODE_SMELL
-Xsquid:S1168Ò"+Return an empty collection instead of null.(§½—HÔ%RMAJORZ
-CODE_SMELL
-usquid:S2272„"NAdd a "NoSuchElementException" for iteration beyond the end of the collection.(üîëÃHÕ%RMINORZBUG
-jsquid:S1854¹"<Remove this useless assignment to local variable "listKeys".(ĞñİéHÖ%RMAJORZ
-CODE_SMELL
-lsquid:S1854Ê">Remove this useless assignment to local variable "listValues".(úËş¶H×%RMAJORZ
-CODE_SMELL
-ˆsquid:S00116"ZRename this field "MAX_LOAD_FACTOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÏùéHØ%RMINORZ
-CODE_SMELL
-…squid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(±—²HÙ%RMINORZ
-CODE_SMELL
-squid:S1149Ú"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰HÚ%RMAJORZ
+£squid:S1319Ô"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(·í½›øÿÿÿÿHû%RMINORZ
 CODE_SMELL

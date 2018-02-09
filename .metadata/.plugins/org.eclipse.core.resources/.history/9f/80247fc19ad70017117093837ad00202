@@ -1,8 +1,0 @@
-package com.main;
-
-public class PatternObjectFactroy {
-
-	public static Jpanel getJpanel(String viewName){
-		
-	}
-}

@@ -1,0 +1,17 @@
+
+bsquid:S1989@"&Add a "try/catch" block for "forward".(ìºÃÃıÿÿÿÿ8¯ÊÔ–„,Hä/RMINORZVULNERABILITY
+bsquid:S19898"&Add a "try/catch" block for "forward".(ìºÃÃıÿÿÿÿ8¯ÊÔ–„,Hå/RMINORZVULNERABILITY
+bsquid:S1989$"&Add a "try/catch" block for "forward".(ìºÃÃıÿÿÿÿ8È¯Æ“„,Hæ/RMINORZVULNERABILITY
+lsquid:S1161":Add the "@Override" annotation above this method signature(Ïû©ÖûÿÿÿÿHç/RMAJORZ
+CODE_SMELL
+bsquid:S1989@"&Add a "try/catch" block for "forward".(ìºÃÃıÿÿÿÿ8ÕÑÒ–„,Hè/RMINORZVULNERABILITY
+„squid:S1192#"HDefine a constant instead of duplicating this literal "voiture" 3 times.(ëÇ÷©ûÿÿÿÿ8àÅß–„,Hé/RCRITICALZ
+CODE_SMELL
+bsquid:S1989$"&Add a "try/catch" block for "forward".(ìºÃÃıÿÿÿÿ8È¯Æ“„,Hê/RMINORZVULNERABILITY
+^squid:S1989!"'Add a "try/catch" block for "parseInt".(°…ÿ’8Ï›”„,Hë/RMINORZVULNERABILITY
+bsquid:S19898"&Add a "try/catch" block for "forward".(ìºÃÃıÿÿÿÿ8ÕÑÒ–„,Hì/RMINORZVULNERABILITY
+gsquid:S1161*":Add the "@Override" annotation above this method signature(‹¨¯¿Hí/RMAJORZ
+CODE_SMELL
+‹squid:S1192$"ODefine a constant instead of duplicating this literal "majVoiture.jsp" 3 times.(ìºÃÃıÿÿÿÿ8µõÔ–„,Hî/RCRITICALZ
+CODE_SMELL
+bsquid:S1989<"+Add a "try/catch" block for "sendRedirect".(¦™Ñ‘8¦Ñî”„,Hï/RMINORZVULNERABILITY

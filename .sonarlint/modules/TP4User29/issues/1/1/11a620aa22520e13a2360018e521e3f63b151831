@@ -1,0 +1,14 @@
+
+gsquid:S1161#":Add the "@Override" annotation above this method signature(‹¨¯¿HÜ/RMAJORZ
+CODE_SMELL
+squid:S1192"QDefine a constant instead of duplicating this literal "ajoutVoiture.jsp" 3 times.(øÀş¥şÿÿÿÿ8¿û¼–„,Hâ/RCRITICALZ
+CODE_SMELL
+bsquid:S1989"&Add a "try/catch" block for "forward".(øÀş¥şÿÿÿÿ8ùóÍ‹„,Há/RMINORZVULNERABILITY
+lsquid:S1161":Add the "@Override" annotation above this method signature(Ïû©ÖûÿÿÿÿHŞ/RMAJORZ
+CODE_SMELL
+bsquid:S19890"&Add a "try/catch" block for "forward".(øÀş¥şÿÿÿÿ8¿û¼–„,HÚ/RMINORZVULNERABILITY
+bsquid:S19894"+Add a "try/catch" block for "sendRedirect".(¦™Ñ‘8­Ş§”„,Hã/RMINORZVULNERABILITY
+bsquid:S19897"&Add a "try/catch" block for "forward".(øÀş¥şÿÿÿÿ8¿û¼–„,Hß/RMINORZVULNERABILITY
+bsquid:S1989"&Add a "try/catch" block for "forward".(øÀş¥şÿÿÿÿ8ùóÍ‹„,HÛ/RMINORZVULNERABILITY
+bsquid:S19890"&Add a "try/catch" block for "forward".(øÀş¥şÿÿÿÿ8óÅ³–„,Hİ/RMINORZVULNERABILITY
+bsquid:S19897"&Add a "try/catch" block for "forward".(øÀş¥şÿÿÿÿ8óÅ³–„,Hà/RMINORZVULNERABILITY

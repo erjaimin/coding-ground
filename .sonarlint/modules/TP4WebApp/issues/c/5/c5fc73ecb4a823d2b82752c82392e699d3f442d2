@@ -1,0 +1,16 @@
+
+Ysquid:S1989%"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿHë(RMINORZVULNERABILITY
+csquid:S1135$"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHï(RINFOZ
+CODE_SMELL
+csquid:S1135"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHî(RINFOZ
+CODE_SMELL
+Xsquid:S1989"(Add a "try/catch" block for "getWriter".(ÏÚ‚´Hê(RMINORZVULNERABILITY
+gsquid:S1161#":Add the "@Override" annotation above this method signature(‹¨¯¿Hñ(RMAJORZ
+CODE_SMELL
+Ysquid:S1989%"$Add a "try/catch" block for "doGet".(®Ó‘ûÿÿÿÿÿHì(RMINORZVULNERABILITY
+lsquid:S1161":Add the "@Override" annotation above this method signature(Ïû©ÖûÿÿÿÿHð(RMAJORZ
+CODE_SMELL
+csquid:S1135"2Complete the task associated to this TODO comment.(ƒŠ® úÿÿÿÿHí(RINFOZ
+CODE_SMELL
+†squid:UselessImportCheck"@Remove this unused import 'javax.servlet.annotation.WebServlet'.(™ì¢´þÿÿÿÿ8õàîóƒ,Hö(RMINORZ
+CODE_SMELL

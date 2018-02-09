@@ -1,0 +1,7 @@
+
+Osquid:S1700"Rename field "voitureListe"(–θ 8γΆΤ‘„,H“0RMAJORZ
+CODE_SMELL
+_squid:S1148N"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8γΆΤ‘„,H”0RMINORZVULNERABILITY
+bsquid:S2095?".Close this "Connection" in a "finally" clause.(„ι®ύÿÿÿÿ8ήΖΝ‘„,H•0RBLOCKERZBUG
+asquid:S2095A"-Close this "Statement" in a "finally" clause.(Β¨ρόÿÿÿÿ8γΆΤ‘„,H–0RBLOCKERZBUG
+asquid:S2095B"-Close this "ResultSet" in a "finally" clause.(£Τόÿÿÿÿ8γΆΤ‘„,H—0RBLOCKERZBUG

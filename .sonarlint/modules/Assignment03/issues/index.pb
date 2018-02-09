@@ -1,22 +1,8 @@
 
 u
 Esrc/org/mcgill/ccs2_505/assignment02/listeners/InventoryListener.java,0/2/02a46867ea7677ef29c04155791fbd47a82e4622
-D
-WebContent/test.html,a/9/a9e0cf40dadbcb9ccdebeccce5422ba56cb8d838
-o
-?src/org/mcgill/ccs2_505/assignment02/listeners/TestServlet.java,7/7/777871667a8278f6a84bb3b87f4fc6b9a48e6fa3
-C
-WebContent/test.jsp,d/3/d3006f568d838401fbf0facd63a05d593a9d6942
-s
-Csrc/org/mcgill/ccs2_505/assignment02/servlets/DisplayInventory.java,e/d/ed9c47a0ffde7280baf95c2e41f7c5e76ef0af2e
 k
 ;src/org/mcgill/ccs2_505/assignment02/inventory/Product.java,6/8/68b6deae39fc0502d87dfd928bb9c840d161bcdf
-F
-WebContent/Sample.html,f/0/f044363e616390f6bdb807909dcdaca6bed99f7b
-p
-@src/org/mcgill/ccs2_505/assignment02/servlets/LogoutServlet.java,b/d/bdb9687acf606c14318415ba0174b4f70aa62353
-o
-?src/org/mcgill/ccs2_505/assignment02/servlets/LoginServlet.java,5/a/5a27e958c4239a6501bc8dd54b50d4ea30632efe
 m
 =src/org/mcgill/ccs2_505/assignment02/inventory/Inventory.java,f/a/faa551578b19b570a075367072074d60a161a151
 r

@@ -1,6 +1,0 @@
-1512448544383	Delete element
-1512448578950	Copy compilation units
-1512448583973	Delete element
-1512505517642	Encapsulate field 'value'
-1512508146889	Extract method 'getHashLinkedListByKey'
-1512517396832	Extract method 'initializeBuckets'
