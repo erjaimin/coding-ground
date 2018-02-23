@@ -9,7 +9,8 @@ import javax.swing.Icon;
  * Version : copyright H2018
  * R�vision : Fr�d�rick Simard et Simon Pichette 
  */
-public class Carte {
+public class Carte<T extends Comparable<T>>{
+	
 	
 	public int numero;  // Le num�ro de carte de Constantes.AS � Constantes.ROI.
 	
